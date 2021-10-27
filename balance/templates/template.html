@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        {% block head %}
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" sizes="32x32" href="./static/img/axs_logo.ico">
+        <title>My DEX</title>
+        <link rel="stylesheet" href="./static/css/style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        {% endblock %}
+    </head>
+    <body>
+        {% block menu %}      
+        <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/"><img src="./static/img/axs_logo.png" alt="" width="30" height="24" class="d-inline-block align-text-top mr-3"><strong class="m-3">My DEX</strong></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Intercambiar</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="/transactions">Movimientos</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="/balance">Balance</a>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        {% endblock %}
+        <div class="container pt-5">
+            {% block body %}
+            {% endblock %}
+        </div>
+        {% block footer %}
+        <footer class="p-1 text-center position-relative">
+            <div class="container">
+                <p class="lead">Desarrollado por <span class="text-primary">Emerson Balahan</span> &copy; 2021.</p>
+            </div>
+        </footer> 
+        {% endblock %}
+    </body>
+</html>

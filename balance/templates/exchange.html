@@ -1,0 +1,61 @@
+{% extends "template.html" %}
+{% block body %}
+<div class="row">
+    <div class="col col-md-6 offset-md-3" id="window">
+        <h4>Intercambiar</h4>
+        <form action="/" method="post">
+            {{ the_form.hidden_tag() }}
+
+            <div id="form">
+                <div class="swapbox">
+                    <div class="swapbox_select">
+                        Token de origen:
+                    </div>
+                    <div class="swapbox_select">
+                        {{ the_form.token_from }}
+                    </div>
+                </div>
+                <div class="swapbox">
+                    <div class="swapbox_select">
+                        Token de destino:
+                    </div>
+                    <div class="swapbox_select">
+                        {{ the_form.token_to }}
+                    </div>
+                </div>
+                <div class="swapbox">
+                    <div class="swapbox_select">
+                        Introduzca un monto:
+                    </div>
+                    <div class="swapbox_select">
+                        {{ the_form.amount_from }}
+                    </div>
+                </div>
+                
+                <div class="card-text mb-2">
+                    Cantidad que recibe:
+                    {{ calculation }}
+                </div>
+        
+                <div class="card-text mb-2">
+                    Precio actual del token:
+                    {{ up }}
+                </div>
+
+                <button class="btn btn-large btn-primary btn-block">
+                    {{ the_form.convert }}
+                </button>
+                <button class="btn btn-large btn-primary btn-block">
+                    {{ the_form.buy }}
+                </button>
+                <div style = "visibility : hidden">
+                    {{ the_form.amount_to }}
+                    {{ the_form.date }}
+                    {{ the_form.time }}
+                </div>
+            </div>
+        </form>   
+    </div>
+</div>
+    
+{% endblock %}

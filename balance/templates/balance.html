@@ -1,0 +1,33 @@
+{% extends "template.html" %}
+{% block body %}
+<div class="row">
+    <div class="col col-md-6 offset-md-3" id="window">
+        <h4>Balance</h4>
+        <form action="/balance" method="post">
+
+            <div class="form">
+                <div class="swapbox">
+                    <div class="swapbox_select">
+                        Inversión total:
+                    </div>
+                    <div class="swapbox_select">
+                        {{ total_fiat }}
+                    </div>
+                </div>
+                <div class="swapbox">
+                    <div class="swapbox_select">
+                        Balance actual:
+                    </div>
+                    <div class="swapbox_select">
+                        {{ worth }}
+                    </div>
+                </div>
+                
+                <button class="btn btn-large btn-primary btn-block">
+                    {{ the_form.calculate }}
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

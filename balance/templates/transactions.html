@@ -1,0 +1,39 @@
+{% extends "template.html" %}
+{% block body %}
+<div class="container pt-5">
+    <h1>Transacciones</h1>
+    {% if items | length == 0 %}
+        <p>No tienes ninguna transacción.</p>
+    {% else %}
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Hora</th>
+                    <th scope="col">Token de origen</th>
+                    <th scope="col">Monto</th>
+                    <th scope="col">Token de destino</th>
+                    <th scope="col">Valor</th>
+                </tr>
+            </thead>
+            
+            {% for item in items %}
+            <tbody>
+                <tr id={{ item.id }}>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.date }}</td>
+                    <td>{{ item.time }}</td>
+                    <td>{{ item.token_from}}</td>
+                    <td>{{ item.amount_from }}</td>
+                    <td>{{ item.token_to}}</td>
+                    <td>{{ item.amount_to }}</td>
+                </tr>
+            </tbody>
+            {% endfor %} 
+        </table>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
